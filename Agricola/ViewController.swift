@@ -1,0 +1,286 @@
+//
+//  ViewController.swift
+//  Agricola
+//
+//  Created by Daniel King on 12/14/14.
+//  Copyright (c) 2014 Daniel King. All rights reserved.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+
+    
+    // Points labels on the right side of the view
+    @IBOutlet var grainPointsLabel : UILabel!
+    @IBOutlet var vegetablesPointsLabel : UILabel!
+    @IBOutlet var sheepPointsLabel : UILabel!
+    @IBOutlet var boarPointsLabel : UILabel!
+    @IBOutlet var cattlePointsLabel : UILabel!
+    @IBOutlet var fieldsPointsLabel : UILabel!
+    @IBOutlet var pasturesPointsLabel : UILabel!
+    @IBOutlet var unusedSpacesPointsLabel : UILabel!
+    @IBOutlet var fencedStablesPointsLabel : UILabel!
+    @IBOutlet var roomsPointsLabel : UILabel!
+    @IBOutlet var familyMembersPointsLabel : UILabel!
+    @IBOutlet var improvementPointsLabel : UILabel!
+    @IBOutlet var bonusPointsLabel : UILabel!
+    
+    // Input fields in the center of the view
+    @IBOutlet var grainInputField : UITextField!
+    @IBOutlet var vegetablesInputField : UITextField!
+    @IBOutlet var sheepInputField : UITextField!
+    @IBOutlet var boarInputField : UITextField!
+    @IBOutlet var cattleInputField : UITextField!
+    @IBOutlet var fieldsInputField : UITextField!
+    @IBOutlet var pasturesInputField : UITextField!
+    @IBOutlet var unusedSpacesInputField : UITextField!
+    @IBOutlet var fencedStablesInputField : UITextField!
+    @IBOutlet var roomsInputField : UITextField!
+    @IBOutlet var familyMembersInputField : UITextField!
+    @IBOutlet var improvementPointsInputField : UITextField!
+    @IBOutlet var bonusPointsInputField : UITextField!
+    
+    // Room type selector
+    @IBOutlet var roomTypeSelector : UISegmentedControl!
+    
+    // Create the calculator class
+    let calc = Calculator()
+    
+    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+        
+//        grainInputField.text = "0"
+//        vegetablesInputField.text = "0"
+//        sheepInputField.text = "0"
+//        boarInputField.text = "0"
+//        cattleInputField.text = "0"
+//        pasturesInputField.text = "0"
+//        fieldsInputField.text = "0"
+//        unusedSpacesInputField.text = "0"
+//        fencedStablesInputField.text = "0"
+//        familyMembersInputField.text = "2"
+//        bonusPointsInputField.text = "0"
+//        improvementPointsInputField.text = "0"
+//        roomsInputField.text = "2"
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func viewTapped(sender : AnyObject) {
+        grainInputField.resignFirstResponder()
+        vegetablesInputField.resignFirstResponder()
+        sheepInputField.resignFirstResponder()
+        boarInputField.resignFirstResponder()
+        cattleInputField.resignFirstResponder()
+        fieldsInputField.resignFirstResponder()
+        pasturesInputField.resignFirstResponder()
+        unusedSpacesInputField.resignFirstResponder()
+        fencedStablesInputField.resignFirstResponder()
+        roomsInputField.resignFirstResponder()
+        familyMembersInputField.resignFirstResponder()
+        improvementPointsInputField.resignFirstResponder()
+        bonusPointsInputField.resignFirstResponder()
+    }
+    
+    func calculateTotal() {  
+        let score = calc.calculateTotal()
+        self.title = "Total: " + String(score)
+    }
+    
+    func getPointsString(score: Int) -> String {
+        var pointsString: String
+        if score == -1 || score == 1 {
+            pointsString = " Point"
+        } else {
+            pointsString = " Points"
+        }        
+        return pointsString
+    }
+
+    
+    @IBAction func grainChanged(sender : AnyObject) {
+        var grain: Int? = grainInputField.text.toInt()
+        if grain == nil {
+            grain = 0
+        }
+        calc.grain = grain!
+        let score = calc.grainScore(grain!)
+        let pointsString = getPointsString(score)
+        grainPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func vegetablesChanged(sender : AnyObject) {
+        var vegetables : Int? = vegetablesInputField.text.toInt()
+        if vegetables == nil {
+            vegetables = 0
+        }
+        calc.vegetables = vegetables!
+        let score = calc.vegetableScore(calc.vegetables)
+        let pointsString = getPointsString(score)
+        vegetablesPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func sheepChanged(sender : AnyObject) {
+        var sheep : Int? = sheepInputField.text.toInt()
+        if sheep == nil {
+            sheep = 0
+        }
+        calc.sheep = sheep!
+        let score = calc.sheepScore(calc.sheep)
+        let pointsString = getPointsString(score)
+        sheepPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func boarChanged(sender : AnyObject) {
+        var boar : Int? = boarInputField.text.toInt()
+        if boar == nil {
+            boar = 0
+        }
+        calc.boar = boar!
+        let score = calc.boarScore(calc.boar)
+        let pointsString = getPointsString(score)
+        boarPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func cattleChanged(sender : AnyObject) {
+        var cattle : Int? = cattleInputField.text.toInt()
+        if cattle == nil {
+            cattle = 0
+        }
+        calc.cattle = cattle!
+        let score = calc.cattleScore(calc.cattle)
+        let pointsString = getPointsString(score)
+        cattlePointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func fieldsChanged(sender : AnyObject) {
+        var fields : Int? = fieldsInputField.text.toInt()
+        if fields == nil {
+            fields = 0
+        }
+        calc.fields = fields!
+        let score = calc.fieldsScore(calc.fields)
+        let pointsString = getPointsString(score)
+        fieldsPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func pasturesChanged(sender : AnyObject) {
+        var pastures : Int? = pasturesInputField.text.toInt()
+        if pastures == nil {
+            pastures = 0
+        }
+        calc.pastures = pastures!
+        let score = calc.pasturesScore(calc.pastures)
+        let pointsString = getPointsString(score)
+        pasturesPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func unusedSpacesChanged(sender : AnyObject) {
+        var unusedSpaces : Int? = unusedSpacesInputField.text.toInt()
+        if unusedSpaces == nil {
+            unusedSpaces = 0
+        }
+        calc.unusedSpaces = unusedSpaces!
+        let score = calc.unusedSpaces * -1
+        let pointsString = getPointsString(score)
+        unusedSpacesPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func fencedStablesChanged(sender : AnyObject) {
+        var fencedStables : Int? = fencedStablesInputField.text.toInt()
+        if fencedStables == nil {
+            fencedStables = 0
+        }
+        calc.fencedStables = fencedStables!
+        let score = calc.fencedStables
+        let pointsString = getPointsString(score)
+        fencedStablesPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func familyMembersChanged(sender : AnyObject) {
+        var familyMembers : Int? = familyMembersInputField.text.toInt()
+        if familyMembers == nil {
+            familyMembers = 0
+        }
+        calc.familyMembers = familyMembers!
+        let score = calc.familyMembers * 3
+        let pointsString = getPointsString(score)
+        familyMembersPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func roomTypeChanged(sender : AnyObject) {
+        var roomTypeIndex: Int? = roomTypeSelector.selectedSegmentIndex
+        var roomType = "Wood"
+        if roomTypeIndex == nil {
+            roomTypeIndex = 0
+        }
+        if roomTypeIndex == 0 {
+            roomType = "Wood"
+        } else if roomTypeIndex == 1 {
+            roomType = "Clay"
+        } else if roomTypeIndex == 2 {
+            roomType = "Stone"
+        }
+        calc.roomType = roomType
+        let score = calc.roomsScore(calc.rooms, roomType: calc.roomType)
+        let pointsString = getPointsString(score)
+        roomsPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+    
+    @IBAction func roomsChanged(sender : AnyObject) {
+        var rooms : Int? = roomsInputField.text.toInt()
+        if rooms == nil {
+            rooms = 0
+        }
+        calc.rooms = rooms!
+        let score = calc.roomsScore(calc.rooms, roomType: calc.roomType)
+        let pointsString = getPointsString(score)
+        roomsPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func improvementPointsChanged(sender : AnyObject) {
+        var improvementPoints : Int? = improvementPointsInputField.text.toInt()
+        if improvementPoints == nil {
+            improvementPoints = 0
+        }
+        calc.improvementPoints = improvementPoints!
+        let score = calc.improvementPoints
+        let pointsString = getPointsString(score)
+        improvementPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+
+    @IBAction func bonusPointsChanged(sender : AnyObject) {
+        var bonusPoints : Int? = bonusPointsInputField.text.toInt()
+        if bonusPoints == nil {
+            bonusPoints = 0
+        }
+        calc.bonusPoints = bonusPoints!
+        let score = calc.bonusPoints
+        let pointsString = getPointsString(score)
+        bonusPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+    
+}
+

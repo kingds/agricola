@@ -9,7 +9,6 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
     // Points labels on the right side of the view
     @IBOutlet var grainPointsLabel : UILabel!
@@ -46,26 +45,12 @@ class ViewController: UIViewController {
     
     // Create the calculator class
     let calc = Calculator()
-    
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-//        grainInputField.text = "0"
-//        vegetablesInputField.text = "0"
-//        sheepInputField.text = "0"
-//        boarInputField.text = "0"
-//        cattleInputField.text = "0"
-//        pasturesInputField.text = "0"
-//        fieldsInputField.text = "0"
-//        unusedSpacesInputField.text = "0"
-//        fencedStablesInputField.text = "0"
-//        familyMembersInputField.text = "2"
-//        bonusPointsInputField.text = "0"
-//        improvementPointsInputField.text = "0"
-//        roomsInputField.text = "2"
+        // Do any additional setup after loading the view, typically from a nib.    
+        self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.3176, green: 0.6902, blue: 0.5176, alpha: 1)
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
     }
 
@@ -259,6 +244,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func improvementPointsChanged(sender : AnyObject) {
+        NSLog("Titties")
         var improvementPoints : Int? = improvementPointsInputField.text.toInt()
         if improvementPoints == nil {
             improvementPoints = 0

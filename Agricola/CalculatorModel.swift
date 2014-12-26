@@ -204,11 +204,11 @@ class Calculator {
         
         var multiplier = 0
         if roomType == "Wood" {
-            multiplier = 1
+            multiplier = 0
         } else if roomType == "Clay" {
-            multiplier = 2
+            multiplier = 1
         } else if roomType == "Stone" {
-            multiplier = 3
+            multiplier = 2
         }
         
         let score = rooms * multiplier

@@ -172,6 +172,9 @@
                                 <rect key="frame" x="149" y="422" width="50" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="improvementPointsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="BuB-mE-1k0"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cga-Rl-ddm">
                                 <rect key="frame" x="149" y="219" width="50" height="30"/>
@@ -241,7 +244,7 @@
                                     <action selector="roomsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="EzY-Ou-GzK"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2 Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6E-cA-F3p">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6E-cA-F3p">
                                 <rect key="frame" x="206" y="326" width="100" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -269,6 +272,9 @@
                                 <rect key="frame" x="149" y="455" width="50" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="bonusPointsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="bM6-Lc-xpq"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bonus Points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5o-Hf-FN4">
                                 <rect key="frame" x="16" y="458" width="107" height="21"/>
@@ -283,12 +289,13 @@
                                     <segment title="Clay"/>
                                     <segment title="Stone"/>
                                 </segments>
+                                <color key="tintColor" red="0.30588235294117649" green="0.60392156862745094" blue="0.42352941176470588" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="roomTypeChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="lvT-jd-Y5V"/>
                                 </connections>
                             </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87450987100601196" green="0.95686280727386475" blue="0.83921575546264648" alpha="1" colorSpace="deviceRGB"/>
                         <gestureRecognizers/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="dBm-3M-hNQ" appends="YES" id="MBD-he-RHn"/>
@@ -311,7 +318,7 @@
                         <outlet property="fieldsPointsLabel" destination="KN5-Zf-mCE" id="NFr-aM-s6F"/>
                         <outlet property="grainInputField" destination="VCw-sn-AJ8" id="kw5-Tt-RVU"/>
                         <outlet property="grainPointsLabel" destination="vVJ-V4-lMm" id="UnO-dl-hzA"/>
-                        <outlet property="improvementPointsInputField" destination="hZo-xX-jAH" id="LrM-Au-iWr"/>
+                        <outlet property="improvementPointsInputField" destination="hZo-xX-jAH" id="8AJ-4z-mRd"/>
                         <outlet property="improvementPointsLabel" destination="3rp-PG-WUC" id="axe-PH-CZ4"/>
                         <outlet property="pasturesInputField" destination="cga-Rl-ddm" id="Au5-Qx-3dy"/>
                         <outlet property="pasturesPointsLabel" destination="GL1-3N-xmZ" id="xZL-WU-2b5"/>

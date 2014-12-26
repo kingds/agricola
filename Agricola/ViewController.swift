@@ -51,12 +51,19 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.    
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.3176, green: 0.6902, blue: 0.5176, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func supportedInterfaceOrientations() -> Int {
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    }
+    
+    override func shouldAutorotate() -> Bool{
+        return false
     }
     
     @IBAction func viewTapped(sender : AnyObject) {
@@ -88,6 +95,63 @@ class ViewController: UIViewController {
             pointsString = " Points"
         }        
         return pointsString
+    }
+    
+    @IBAction func reset(sender: AnyObject) {
+        calc.grain = 0
+        calc.vegetables = 0
+        calc.sheep = 0
+        calc.boar = 0
+        calc.cattle = 0
+        calc.fields = 0
+        calc.unusedSpaces = 0
+        calc.pastures = 0
+        calc.fencedStables = 0
+        calc.rooms = 2
+        calc.roomType = "Wood"
+        calc.familyMembers = 2
+        calc.improvementPoints = 0
+        calc.bonusPoints = 0
+
+        grainInputField.text = nil
+        vegetablesInputField.text = nil
+        sheepInputField.text = nil
+        boarInputField.text = nil
+        cattleInputField.text = nil
+        fieldsInputField.text = nil
+        pasturesInputField.text = nil
+        unusedSpacesInputField.text = nil
+        fencedStablesInputField.text = nil
+        roomsInputField.text = nil
+        familyMembersInputField.text = nil
+        improvementPointsInputField.text = nil
+        bonusPointsInputField.text = nil
+
+        roomTypeSelector.selectedSegmentIndex = 0
+
+        grainChanged(self)
+        vegetablesChanged(self)
+        sheepChanged(self)
+        boarChanged(self)
+        cattleChanged(self)
+        fieldsChanged(self)
+        pasturesChanged(self)
+        unusedSpacesChanged(self)
+        fencedStablesChanged(self)
+        roomsChanged(self)
+        familyMembersChanged(self)
+        improvementPointsChanged(self)
+        bonusPointsChanged(self)
+        
+        
+        
+
+        calculateTotal()
+        
+        self.title = "Agricola Calculator"
+        
+        
+        
     }
 
     

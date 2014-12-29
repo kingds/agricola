@@ -14,6 +14,7 @@
 		656CFC661A3E95450038A885 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 656CFC641A3E95450038A885 /* LaunchScreen.xib */; };
 		656CFC721A3E95450038A885 /* AgricolaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CFC711A3E95450038A885 /* AgricolaTests.swift */; };
 		656CFC7C1A3E9C450038A885 /* CalculatorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656CFC7B1A3E9C450038A885 /* CalculatorModel.swift */; };
+		65C294291A51F31B00FA9F2E /* BSKeyboardControls.m in Sources */ = {isa = PBXBuildFile; fileRef = 65C294281A51F31B00FA9F2E /* BSKeyboardControls.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,9 @@
 		656CFC701A3E95450038A885 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		656CFC711A3E95450038A885 /* AgricolaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgricolaTests.swift; sourceTree = "<group>"; };
 		656CFC7B1A3E9C450038A885 /* CalculatorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorModel.swift; sourceTree = "<group>"; };
+		65C294261A51F31A00FA9F2E /* Agricola-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Agricola-Bridging-Header.h"; sourceTree = "<group>"; };
+		65C294271A51F31B00FA9F2E /* BSKeyboardControls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSKeyboardControls.h; sourceTree = "<group>"; };
+		65C294281A51F31B00FA9F2E /* BSKeyboardControls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSKeyboardControls.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,10 +86,13 @@
 				656CFC5B1A3E95450038A885 /* AppDelegate.swift */,
 				656CFC5D1A3E95450038A885 /* ViewController.swift */,
 				656CFC7B1A3E9C450038A885 /* CalculatorModel.swift */,
+				65C294271A51F31B00FA9F2E /* BSKeyboardControls.h */,
+				65C294281A51F31B00FA9F2E /* BSKeyboardControls.m */,
 				656CFC5F1A3E95450038A885 /* Main.storyboard */,
 				656CFC621A3E95450038A885 /* Images.xcassets */,
 				656CFC641A3E95450038A885 /* LaunchScreen.xib */,
 				656CFC591A3E95450038A885 /* Supporting Files */,
+				65C294261A51F31A00FA9F2E /* Agricola-Bridging-Header.h */,
 			);
 			path = Agricola;
 			sourceTree = "<group>";
@@ -216,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				656CFC7C1A3E9C450038A885 /* CalculatorModel.swift in Sources */,
+				65C294291A51F31B00FA9F2E /* BSKeyboardControls.m in Sources */,
 				656CFC5E1A3E95450038A885 /* ViewController.swift in Sources */,
 				656CFC5C1A3E95450038A885 /* AppDelegate.swift in Sources */,
 			);
@@ -340,9 +348,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Agricola/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Agricola/Agricola-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -350,9 +361,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = Agricola/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Agricola/Agricola-Bridging-Header.h";
 			};
 			name = Release;
 		};

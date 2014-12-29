@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>A42EA9D0-9255-4DB1-9301-8522C1EAEA1D</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Agricola</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>1724DE5080E215126E110515109DD314ED84B6C8</key>
+		<string>https://github.com/kingds/agricola.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Agricola.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>1724DE5080E215126E110515109DD314ED84B6C8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/kingds/agricola.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>1724DE5080E215126E110515109DD314ED84B6C8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>1724DE5080E215126E110515109DD314ED84B6C8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Agricola</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -45,13 +45,103 @@ class ViewController: UIViewController {
     
     // Create the calculator class
     let calc = Calculator()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.    
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.3176, green: 0.6902, blue: 0.5176, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        keyboardSetup()
+
     }
+    
+    func showGrainKeyboard() {
+        grainInputField.becomeFirstResponder()
+    }
+    func showVegetablesKeyboard() {
+        vegetablesInputField.becomeFirstResponder()
+    }
+    func showSheepKeyboard() {
+        sheepInputField.becomeFirstResponder()
+    }
+    func showBoarKeyboard() {
+        boarInputField.becomeFirstResponder()
+    }
+    func showCattleKeyboard() {
+        cattleInputField.becomeFirstResponder()
+    }
+    func showFieldsKeyboard() {
+        fieldsInputField.becomeFirstResponder()
+    }
+    func showPasturesKeyboard() {
+        pasturesInputField.becomeFirstResponder()
+    }
+    func showUnusedSpacesKeyboard() {
+        unusedSpacesInputField.becomeFirstResponder()
+    }
+    func showFencedStablesKeyboard() {
+        fencedStablesInputField.becomeFirstResponder()
+    }
+    func showRoomsKeyboard() {
+        roomsInputField.becomeFirstResponder()
+    }
+    func showFamilyMembersKeyboard() {
+        familyMembersInputField.becomeFirstResponder()
+    }
+    func showImprovementPointsKeyboard() {
+        improvementPointsInputField.becomeFirstResponder()
+    }
+    func showBonusPointsKeyboard() {
+        bonusPointsInputField.becomeFirstResponder()
+    }
+    
+    func keyboardToolbar(nextAction: String, previousAction: String) -> UIToolbar {
+    
+        var toolbar: UIToolbar = UIToolbar(frame:CGRectMake(0, 524, 320, 44))
+        
+        var previousButton = UIBarButtonItem(title: "Previous", style: UIBarButtonItemStyle.Plain, target: self, action: Selector(previousAction))
+        if previousAction == "None" {
+            previousButton.enabled = false
+        }
+    
+        var nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Plain, target: self, action: Selector(nextAction))
+        if nextAction == "None" {
+            nextButton.enabled = false
+        }
+        
+        let fillerSpace = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+
+        
+        toolbar.setItems([previousButton, fillerSpace, nextButton], animated: false)
+        
+        return toolbar
+        
+    }
+    
+    func moveToInputField(field: UITextField) {
+        field.becomeFirstResponder()
+    }
+
+    func keyboardSetup() {
+        
+        grainInputField.inputAccessoryView = keyboardToolbar("showVegetablesKeyboard", previousAction: "None")
+        vegetablesInputField.inputAccessoryView = keyboardToolbar("showSheepKeyboard", previousAction:"showGrainKeyboard")
+        sheepInputField.inputAccessoryView = keyboardToolbar("showBoarKeyboard", previousAction: "showVegetablesKeyboard")
+        boarInputField.inputAccessoryView = keyboardToolbar("showCattleKeyboard", previousAction: "showSheepKeyboard")
+        cattleInputField.inputAccessoryView = keyboardToolbar("showFieldsKeyboard", previousAction: "showBoarKeyboard")
+        fieldsInputField.inputAccessoryView = keyboardToolbar("showPasturesKeyboard", previousAction: "showCattleKeyboard")
+        pasturesInputField.inputAccessoryView = keyboardToolbar("showUnusedSpacesKeyboard", previousAction: "showFieldsKeyboard")
+        unusedSpacesInputField.inputAccessoryView = keyboardToolbar("showFencedStablesKeyboard", previousAction: "showPasturesKeyboard")
+        fencedStablesInputField.inputAccessoryView = keyboardToolbar("showRoomsKeyboard", previousAction: "showUnusedSpacesKeyboard")
+        roomsInputField.inputAccessoryView = keyboardToolbar("showFamilyMembersKeyboard", previousAction: "showFencedStablesKeyboard")
+        familyMembersInputField.inputAccessoryView = keyboardToolbar("showImprovementPointsKeyboard", previousAction: "showRoomsKeyboard")
+        improvementPointsInputField.inputAccessoryView = keyboardToolbar("showBonusPointsKeyboard", previousAction: "showFamilyMembersKeyboard")
+        bonusPointsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showFamilyMembersKeyboard")        
+    }
+        
+        
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

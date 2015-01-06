@@ -43,6 +43,12 @@ class ViewController: UIViewController {
     // Room type selector
     @IBOutlet var roomTypeSelector : UISegmentedControl!
     
+    // Scroll View
+    @IBOutlet var scrollView: UIScrollView!
+    
+    // Content View
+    @IBOutlet var contentView: UIView!
+    
     // Create the calculator class
     let calc = Calculator()
     
@@ -52,7 +58,11 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red: 0.3176, green: 0.6902, blue: 0.5176, alpha: 1)
         self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         
+        // Setup the keyboard for data entry
         keyboardSetup()
+        
+        // Set up the scroll view
+        scrollViewSetup()
 
     }
     
@@ -137,12 +147,15 @@ class ViewController: UIViewController {
         roomsInputField.inputAccessoryView = keyboardToolbar("showFamilyMembersKeyboard", previousAction: "showFencedStablesKeyboard")
         familyMembersInputField.inputAccessoryView = keyboardToolbar("showImprovementPointsKeyboard", previousAction: "showRoomsKeyboard")
         improvementPointsInputField.inputAccessoryView = keyboardToolbar("showBonusPointsKeyboard", previousAction: "showFamilyMembersKeyboard")
-        bonusPointsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showFamilyMembersKeyboard")        
+        bonusPointsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showFamilyMembersKeyboard")
     }
-        
-        
-
-
+    
+    func scrollViewSetup() {
+        scrollView.scrollEnabled = true
+        scrollView.contentSize = CGSizeMake(320, 1000)
+        scrollView.addSubview(contentView)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -239,9 +252,7 @@ class ViewController: UIViewController {
         calculateTotal()
         
         self.title = "Agricola Calculator"
-        
-        
-        
+         
     }
 
     
@@ -398,7 +409,6 @@ class ViewController: UIViewController {
     }
 
     @IBAction func improvementPointsChanged(sender : AnyObject) {
-        NSLog("Titties")
         var improvementPoints : Int? = improvementPointsInputField.text.toInt()
         if improvementPoints == nil {
             improvementPoints = 0

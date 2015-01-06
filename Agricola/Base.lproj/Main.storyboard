@@ -12,7 +12,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" id="oqq-Am-um4">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" id="oqq-Am-um4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -40,6 +40,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="KFN-th-6gm"/>
                                                     <action selector="vegetablesChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="N2Q-9X-qe1"/>
                                                 </connections>
                                             </textField>
@@ -63,6 +64,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="gfk-Mz-sgn"/>
                                                     <action selector="sheepChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="DOc-0Z-JxV"/>
                                                 </connections>
                                             </textField>
@@ -87,6 +89,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="boarChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="9Km-6v-e1u"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="1XE-20-pPo"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1 Point" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ElL-3f-Pfe">
@@ -110,6 +113,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="cattleChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="QiR-88-fj0"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="zZz-SQ-OTZ"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1 Point" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="i3C-WD-M86">
@@ -133,6 +137,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="fieldsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="3N4-gN-LCl"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="L6c-ti-L3s"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-1 Point" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="KN5-Zf-mCE">
@@ -156,6 +161,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="grainChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="eEN-h0-JUJ"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="jJJ-Ww-JZz"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6 Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="VYy-0p-KcY">
@@ -179,6 +185,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="familyMembersChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="FkG-HU-b2e"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="oOD-pe-Vdt"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="3rp-PG-WUC">
@@ -202,6 +209,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="improvementPointsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="BuB-mE-1k0"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="qkg-Th-dQK"/>
                                                 </connections>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" id="cga-Rl-ddm">
@@ -210,6 +218,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="bob-oK-j8S"/>
                                                     <action selector="pasturesChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="1Xg-ce-5JP"/>
                                                 </connections>
                                             </textField>
@@ -233,6 +242,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="jss-0w-RO8"/>
                                                     <action selector="unusedSpacesChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="EPb-an-B5U"/>
                                                 </connections>
                                             </textField>
@@ -257,6 +267,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="fencedStablesChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="TeR-9Z-Noq"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="HBT-Wy-SI2"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="LUr-J9-Ukv">
@@ -279,6 +290,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="Q40-FD-7Gi"/>
                                                     <action selector="roomsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="EzY-Ou-GzK"/>
                                                 </connections>
                                             </textField>
@@ -317,6 +329,7 @@
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
                                                     <action selector="bonusPointsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="bM6-Lc-xpq"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="dk0-zq-lQq"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bonus Points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="y5o-Hf-FN4">

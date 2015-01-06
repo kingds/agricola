@@ -151,7 +151,7 @@ class ViewController: UIViewController {
     }
     
     func scrollViewSetup() {
-        scrollView.scrollEnabled = true
+        scrollView.scrollEnabled = false
         scrollView.contentSize = CGSizeMake(320, 1000)
         scrollView.addSubview(contentView)
     }
@@ -183,6 +183,8 @@ class ViewController: UIViewController {
         familyMembersInputField.resignFirstResponder()
         improvementPointsInputField.resignFirstResponder()
         bonusPointsInputField.resignFirstResponder()
+        
+        scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
     
     func calculateTotal() {  
@@ -198,6 +200,22 @@ class ViewController: UIViewController {
             pointsString = " Points"
         }        
         return pointsString
+    }
+    
+    @IBAction func inputFieldSelected(sender: UITextField) {
+        
+        let originPoint = sender.frame.origin
+        if originPoint.y > 210 {
+            scrollView.setContentOffset(CGPointMake(0, originPoint.y - 210), animated: true)
+        }
+        
+        
+        
+        
+        
+        
+        
+        
     }
     
     @IBAction func reset(sender: AnyObject) {

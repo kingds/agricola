@@ -133,8 +133,7 @@ class ViewController: UIViewController {
         field.becomeFirstResponder()
     }
 
-    func keyboardSetup() {
-        
+    func keyboardSetup() {        
         grainInputField.inputAccessoryView = keyboardToolbar("showVegetablesKeyboard", previousAction: "None")
         vegetablesInputField.inputAccessoryView = keyboardToolbar("showSheepKeyboard", previousAction:"showGrainKeyboard")
         sheepInputField.inputAccessoryView = keyboardToolbar("showBoarKeyboard", previousAction: "showVegetablesKeyboard")
@@ -207,14 +206,9 @@ class ViewController: UIViewController {
         let originPoint = sender.frame.origin
         if originPoint.y > 210 {
             scrollView.setContentOffset(CGPointMake(0, originPoint.y - 210), animated: true)
+        } else {
+            scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
         }
-        
-        
-        
-        
-        
-        
-        
         
     }
     

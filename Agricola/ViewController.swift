@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet var familyMembersPointsLabel : UILabel!
     @IBOutlet var improvementPointsLabel : UILabel!
     @IBOutlet var bonusPointsLabel : UILabel!
+    @IBOutlet var beggingCardsLabel : UILabel!
     
     // Input fields in the center of the view
     @IBOutlet var grainInputField : UITextField!
@@ -39,6 +40,7 @@ class ViewController: UIViewController {
     @IBOutlet var familyMembersInputField : UITextField!
     @IBOutlet var improvementPointsInputField : UITextField!
     @IBOutlet var bonusPointsInputField : UITextField!
+    @IBOutlet var beggingCardsInputField : UITextField!
     
     // Room type selector
     @IBOutlet var roomTypeSelector : UISegmentedControl!
@@ -105,6 +107,9 @@ class ViewController: UIViewController {
     func showBonusPointsKeyboard() {
         bonusPointsInputField.becomeFirstResponder()
     }
+    func showBeggingCardsKeyboard() {
+        beggingCardsInputField.becomeFirstResponder()
+    }
     
     func keyboardToolbar(nextAction: String, previousAction: String) -> UIToolbar {
     
@@ -125,8 +130,7 @@ class ViewController: UIViewController {
         
         toolbar.setItems([previousButton, fillerSpace, nextButton], animated: false)
         
-        return toolbar
-        
+        return toolbar        
     }
     
     func moveToInputField(field: UITextField) {
@@ -146,7 +150,8 @@ class ViewController: UIViewController {
         roomsInputField.inputAccessoryView = keyboardToolbar("showFamilyMembersKeyboard", previousAction: "showFencedStablesKeyboard")
         familyMembersInputField.inputAccessoryView = keyboardToolbar("showImprovementPointsKeyboard", previousAction: "showRoomsKeyboard")
         improvementPointsInputField.inputAccessoryView = keyboardToolbar("showBonusPointsKeyboard", previousAction: "showFamilyMembersKeyboard")
-        bonusPointsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showFamilyMembersKeyboard")
+        bonusPointsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showImprovementPointsKeyboard")
+        beggingCardsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showBonusPointsKeyboard")
     }
     
     func scrollViewSetup() {
@@ -182,6 +187,7 @@ class ViewController: UIViewController {
         familyMembersInputField.resignFirstResponder()
         improvementPointsInputField.resignFirstResponder()
         bonusPointsInputField.resignFirstResponder()
+        beggingCardsInputField.resignFirstResponder()
         
         scrollView.setContentOffset(CGPointMake(0, 0), animated: true)
     }
@@ -227,6 +233,7 @@ class ViewController: UIViewController {
         calc.familyMembers = 2
         calc.improvementPoints = 0
         calc.bonusPoints = 0
+        calc.beggingCards = 0
 
         grainInputField.text = nil
         vegetablesInputField.text = nil
@@ -241,6 +248,7 @@ class ViewController: UIViewController {
         familyMembersInputField.text = nil
         improvementPointsInputField.text = nil
         bonusPointsInputField.text = nil
+        beggingCardsInputField.text = nil
 
         roomTypeSelector.selectedSegmentIndex = 0
 
@@ -257,9 +265,7 @@ class ViewController: UIViewController {
         familyMembersChanged(self)
         improvementPointsChanged(self)
         bonusPointsChanged(self)
-        
-        
-        
+        beggingCardsChanged(self)
 
         calculateTotal()
         
@@ -441,6 +447,18 @@ class ViewController: UIViewController {
         let score = calc.bonusPoints
         let pointsString = getPointsString(score)
         bonusPointsLabel.text = String(score) + pointsString
+        calculateTotal()
+    }
+    
+    @IBAction func beggingCardsChanged(sender : AnyObject) {
+        var beggingCards : Int? = beggingCardsInputField.text.toInt()
+        if beggingCards == nil {
+            beggingCards = 0
+        }
+        calc.beggingCards = beggingCards!
+        let score = calc.beggingCardsScore(calc.beggingCards)
+        let pointsString = getPointsString(score)
+        beggingCardsLabel.text = String(score) + pointsString
         calculateTotal()
     }
     

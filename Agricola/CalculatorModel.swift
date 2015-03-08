@@ -25,6 +25,7 @@ class Calculator {
     var familyMembers : Int
     var improvementPoints : Int
     var bonusPoints : Int
+    var beggingCards : Int
     
     init () {
         
@@ -42,6 +43,7 @@ class Calculator {
         self.familyMembers = 2
         self.improvementPoints = 0
         self.bonusPoints = 0
+        self.beggingCards = 0
         
     }
     
@@ -63,6 +65,7 @@ class Calculator {
         totalScore += roomsScore(self.rooms, roomType: self.roomType)
         totalScore += self.improvementPoints
         totalScore += self.bonusPoints
+        totalScore += beggingCardsScore(self.beggingCards)
         
         return totalScore
     }
@@ -214,6 +217,12 @@ class Calculator {
         let score = rooms * multiplier
         
         return score        
+    }
+    
+    func beggingCardsScore(beggingCards: Int) -> Int {
+        var score = beggingCards * (-3)
+        
+        return score
     }
     
     

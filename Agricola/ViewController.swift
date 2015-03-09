@@ -130,8 +130,7 @@ class ViewController: UIViewController {
         
         toolbar.setItems([previousButton, fillerSpace, nextButton], animated: false)
         
-        return toolbar
-        
+        return toolbar        
     }
     
     func moveToInputField(field: UITextField) {
@@ -151,7 +150,11 @@ class ViewController: UIViewController {
         roomsInputField.inputAccessoryView = keyboardToolbar("showFamilyMembersKeyboard", previousAction: "showFencedStablesKeyboard")
         familyMembersInputField.inputAccessoryView = keyboardToolbar("showImprovementPointsKeyboard", previousAction: "showRoomsKeyboard")
         improvementPointsInputField.inputAccessoryView = keyboardToolbar("showBonusPointsKeyboard", previousAction: "showFamilyMembersKeyboard")
+<<<<<<< HEAD
         bonusPointsInputField.inputAccessoryView = keyboardToolbar("showBeggingCardsKeyboard", previousAction: "showImprovementPointsKeyboard")
+=======
+        bonusPointsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showImprovementPointsKeyboard")
+>>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
         beggingCardsInputField.inputAccessoryView = keyboardToolbar("None", previousAction: "showBonusPointsKeyboard")
     }
     
@@ -451,17 +454,28 @@ class ViewController: UIViewController {
         calculateTotal()
     }
     
+<<<<<<< HEAD
     @IBAction func beggingCardsChanged(sender: AnyObject) {
+=======
+    @IBAction func beggingCardsChanged(sender : AnyObject) {
+>>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
         var beggingCards : Int? = beggingCardsInputField.text.toInt()
         if beggingCards == nil {
             beggingCards = 0
         }
         calc.beggingCards = beggingCards!
+<<<<<<< HEAD
         let score = calc.beggingCardsScore(beggingCards!)
         let pointsString = getPointsString(score)
         beggingCardsLabel.text = String(score) + pointsString
         calculateTotal()
         
+=======
+        let score = calc.beggingCardsScore(calc.beggingCards)
+        let pointsString = getPointsString(score)
+        beggingCardsLabel.text = String(score) + pointsString
+        calculateTotal()
+>>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
     }
     
 }

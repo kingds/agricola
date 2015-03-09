@@ -313,22 +313,38 @@
                                                     <action selector="roomTypeChanged:" destination="vXZ-lx-hvc" eventType="valueChanged" id="lvT-jd-Y5V"/>
                                                 </connections>
                                             </segmentedControl>
+<<<<<<< HEAD
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="izA-jm-3Pz">
+=======
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0 Points" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngu-H4-iJM">
+>>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
                                                 <rect key="frame" x="229" y="478" width="100" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+<<<<<<< HEAD
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hyh-Ip-kdS">
+=======
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OGq-E9-0IE">
+>>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
                                                 <rect key="frame" x="148" y="475" width="50" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 <connections>
+<<<<<<< HEAD
                                                     <action selector="beggingCardsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="Bsd-hq-457"/>
                                                     <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="jmr-4t-bN7"/>
                                                 </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Begging Cards:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="scA-qy-j4B">
+=======
+                                                    <action selector="beggingCardsChanged:" destination="vXZ-lx-hvc" eventType="editingChanged" id="oCy-GM-MPH"/>
+                                                    <action selector="inputFieldSelected:" destination="vXZ-lx-hvc" eventType="editingDidBegin" id="UuF-Zl-EA1"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Begging Cards:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jiz-4l-ql1">
+>>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
                                                 <rect key="frame" x="15" y="478" width="120" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -340,9 +356,6 @@
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.87450987099999999" green="0.95686280729999995" blue="0.83921575550000005" alpha="1" colorSpace="deviceRGB"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="4Vu-No-IYV"/>
-                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="0.87450987100601196" green="0.95686280727386475" blue="0.83921575546264648" alpha="1" colorSpace="deviceRGB"/>
@@ -368,15 +381,19 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="beggingCardsInputField" destination="Hyh-Ip-kdS" id="RZf-NY-rT0"/>
                         <outlet property="beggingCardsLabel" destination="izA-jm-3Pz" id="T7X-is-pDK"/>
+=======
+                        <outlet property="beggingCardsInputField" destination="OGq-E9-0IE" id="boR-24-Rzq"/>
+                        <outlet property="beggingCardsLabel" destination="Ngu-H4-iJM" id="JTA-Ew-1rG"/>
+>>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
                         <outlet property="boarInputField" destination="w98-ZI-QuA" id="93l-Aw-ADq"/>
                         <outlet property="boarPointsLabel" destination="ElL-3f-Pfe" id="06Q-6K-teq"/>
                         <outlet property="bonusPointsInputField" destination="WYl-5M-wqs" id="F0U-jS-pwB"/>
                         <outlet property="bonusPointsLabel" destination="5DR-l6-yvE" id="0DW-1J-T5T"/>
                         <outlet property="cattleInputField" destination="YgV-YU-AoO" id="dFX-s2-D6V"/>
                         <outlet property="cattlePointsLabel" destination="i3C-WD-M86" id="zNF-rc-P8u"/>
-                        <outlet property="contentView" destination="wcj-4L-XSA" id="Ik8-Rm-V5t"/>
                         <outlet property="familyMembersInputField" destination="NLA-Zg-tK6" id="hjD-qf-Max"/>
                         <outlet property="familyMembersPointsLabel" destination="VYy-0p-KcY" id="1WP-ye-PZo"/>
                         <outlet property="fencedStablesInputField" destination="tjC-ro-FhG" id="2ik-Kp-7cn"/>

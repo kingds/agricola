@@ -223,15 +223,7 @@ class Calculator {
     
     func beggingCardsScore(beggingCards: Int) -> Int {
         var score = beggingCards * (-3)
-<<<<<<< HEAD
-=======
-        
->>>>>>> 1d1eec2098aed7237408b7317a05dfe5f77c3cda
+
         return score
     }
-    
-    
-    
-    
-    
 }
